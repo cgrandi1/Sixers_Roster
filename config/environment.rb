@@ -1,6 +1,5 @@
-require 'pry'
 require 'nokogiri'
-require 'open-uri
+require 'pry'
 
-require_relative '../lib/Sixers_Roster/cli'
-require_relative '../lib/Sixers_Roster/version'
+require_relative '../lib/sixers_roster/cli'
+require_relative '../lib/sixers_roster/version'

@@ -3,4 +3,4 @@
 require_relative '../lib/Sixers_Roster/version'
 require_relative '../lib/Sixers_Roster/cli.rb'
 
-CLI.new.call
+SixersRoster::CLI.new.call
