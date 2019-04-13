@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/Sixers_Roster'
+require_relative '../lib/Sixers_Roster/version'
+require_relative '../lib/Sixers_Roster/cli.rb'
 
-SixersRoster::CLI.new.call
+CLI.new.call
