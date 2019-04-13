@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/worlds_best_restaurants'
+require_relative '../lib/Sixers_Roster'
 
 SixersRoster::CLI.new.call
