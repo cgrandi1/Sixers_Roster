@@ -1,13 +1,11 @@
-class Players
-  attr_accessor :name, :bio
+class Player
+  attr_accessor :name
 
 
   @@all = []
 
-  def initialize(name, bio)
+  def initialize(name)
     @name = name
-    @bio = bio
-
     @@all << self
   end
 
@@ -15,5 +13,5 @@ class Players
     @@all
   end
 
-  
+
 end

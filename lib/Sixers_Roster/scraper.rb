@@ -11,7 +11,7 @@ class Scraper
       number = roster.css(".roster__player__header_jnumber").text.to_i
       bio = roster.css(".roster__player__info__bio").text
 
-      Player.new(name, bio)
+      Player.new(name)
 
     binding.pry
   end
