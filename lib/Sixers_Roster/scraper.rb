@@ -1,6 +1,6 @@
-class Scraper
+class SixersRoster::Scraper
 
-  def self.scrape_page
+  def self.scrape_page(url)
     open = html("https://www.nba.com/sixers/roster/")
     doc = Nokogiri::HTML(open("html"))
     doc.css("div.pane-content").each do |player|

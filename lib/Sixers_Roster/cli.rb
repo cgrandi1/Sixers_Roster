@@ -1,6 +1,6 @@
 #Our CLI Controller
 
-class CLI
+class SixersRoster::CLI
 
   def call
     puts "Here is the 76ers roster"
@@ -15,6 +15,8 @@ class CLI
       puts input
       case input
         when "#{players.name}"
+          url = "https://www.nba.com/sixers/roster/"
+          SixersRoster::Scraper.scrape_page(url)
     end
   end
 
