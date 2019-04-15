@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'pry'
 require 'open-uri'
 
-require_relative '.sixers_roster/cli'
-require_relative '.sixers_roster/version'
-require_relative '.sixers_roster/scraper'
-require_relative '.sixers_roster/players'
+require_relative "../lib/Sixers_Roster/cli"
+require_relative "../lib/Sixers_Roster/version"
+require_relative "../lib/Sixers_Roster/scraper"
+require_relative "../lib/Sixers_Roster/players"

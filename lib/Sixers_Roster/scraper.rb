@@ -1,6 +1,6 @@
 class Scraper
 
-  def scrape_page
+  def self.scrape_page
     open = html("https://www.nba.com/sixers/roster/")
     doc = Nokogiri::HTML(open("html"))
     doc.css("div.pane-content").each do |player|
