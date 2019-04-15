@@ -8,8 +8,13 @@ class CLI
   end
 
   def menu
+    puts "Select a player"
     Player.all.each.with_index(1) do |player, index|
-      puts "#{index} ,#{players.name}, #{players.bio}"
+      puts "#{index} ,#{players.name}, #{players.position}, #{players.number}"
+      input = gets.chomp
+      puts input
+      case input
+        when "#{players.name}"
     end
   end
 
