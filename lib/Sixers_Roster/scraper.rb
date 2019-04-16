@@ -18,8 +18,5 @@ class Scraper
       new_player.country = player.css(".roster__player__info__bio dd")[4].text
       new_player.years_pro = player.css(".roster__player__info__bio dd")[5].text.to_i
     end
-
   end
-end
-
 end
