@@ -1,5 +1,6 @@
 class Player
-  attr_accessor :name
+
+  attr_accessor :name, :position, :number, :height, :weight, :dob, :prior_nba, :country, :years_pro
 
 
   @@all = []
