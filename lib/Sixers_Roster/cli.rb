@@ -29,12 +29,20 @@ class CLI
     max_value = Player.all.length
     input = gets.strip.to_i
     if input.between?(1,max_value)
-      #valid input
+      person = Player.all[input -1]
+      display_players(person)
     else
       puts "Invalid input"
+      show_players
       select_player
     end
   end
+
+
+  def display_players(person)
+    binding.pry
+  end
+
 
 
   def show_player_bio
