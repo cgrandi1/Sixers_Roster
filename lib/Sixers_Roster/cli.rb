@@ -7,7 +7,7 @@ class CLI
   def call
     welcome
     show_players
-    #select_player  #get the player from the Player.all array and set it = player
+    select_player  #get the player from the Player.all array and set it = player
     #show_player_bio #once you set your player just puts the player attributes
     #menu   #this is the hard part
     #goodbye
@@ -25,25 +25,23 @@ class CLI
   end
 
   def select_player
-    #TODO
+    puts "What player do you want to select?"
+    input = gets.chomp.downcase
+    Scraper.scrape_page 
+    case input
+    when Player.all.each do |player|
+      puts input == player.name
+      end
+    end
   end
+
 
   def show_player_bio
     #TODO
   end
 
   def menu
-    puts "Select a player"
-    Players.all.each.with_index(1) do |player, index|
-      puts "#{index} ,#{players.name}, #{players.position}, #{players.number}"
-      input = gets.chomp
-      puts input
-      case input
-        when "#{players.name}"
-          url = "https://www.nba.com/sixers/roster/"
-          categories = Scraper.scrape_page(url)
-      end
-    end
+
   end
 
 end
