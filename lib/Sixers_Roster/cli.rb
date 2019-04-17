@@ -25,13 +25,14 @@ class CLI
   end
 
   def select_player
-    puts "What player do you want to select?"
-    input = gets.chomp.downcase
-    Scraper.scrape_page 
-    case input
-    when Player.all.each do |player|
-      puts input == player.name
-      end
+    puts "\n What player do you want to select (choose by number)?"
+    max_value = Player.all.length
+    input = gets.strip.to_i
+    if input.between?(1,max_value)
+      #valid input
+    else
+      puts "Invalid input"
+      select_player
     end
   end
 
