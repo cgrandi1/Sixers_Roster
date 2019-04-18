@@ -31,27 +31,20 @@ class CLI
     input = gets.strip
     if input.to_i.between?(1,max_value)
       person = Player.all[input.to_i - 1]
-      show_player_bio(person)
-    else
-      "Invalid"
-      show_players
-    end
-  end
-end
-
-
-  def show_player_bio(person)
-    puts "He is from #{person.country} - He was born on #{person.dob} - He is #{person.weight} - He is #{person.height} - He played at #{person.prior_nba}"
-    puts "Would you like to select another player?: yes or exit"
-    input = gets.strip
-      if input == "yes"
-        select_player
-      elsif input == "exit"
-        "Goodbye"
-      else
-        "Invalid"
-      end
-    end
+        puts "He is from #{person.country} - He was born on #{person.dob} - He is #{person.weight} - He is #{person.height} - He played at #{person.prior_nba}"
+        puts "Would you like to select another player?: yes or exit" 
+        input = gets.strip
+        if input == "yes"
+            puts select_player
+        elsif input == "exit"
+            puts "Goodbye!"
+        else 
+            puts "Invalid. Please type 'yes' or 'exit'!"  
+          end 
+        end 
+      end 
+    end  
+  
 
   def menu
 
