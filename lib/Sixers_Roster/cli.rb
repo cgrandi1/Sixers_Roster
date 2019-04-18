@@ -7,9 +7,8 @@ class CLI
   def call
     welcome
     show_players
-    select_player  #get the player from the Player.all array and set it = player
-    #show_player_bio #once you set your player just puts the player attributes
-    #menu   #this is the hard part
+    select_player
+    #menu
     #goodbye
   end
 
@@ -25,29 +24,37 @@ class CLI
   end
 
   def select_player
+    input = ""
+    while input != "exit"
     puts "\n What player do you want to select (choose by number)?"
     max_value = Player.all.length
-    input = gets.strip.to_i
-    if input.between?(1,max_value)
-      person = Player.all[input -1]
-      display_players(person)
-    else
+    input = gets.strip
+    if input.to_i.between?(1,max_value)
+      person = Player.all[input.to_i -1]
+      show_player_bio(person)
+    elsif input == "exit"
+      puts "Goodbye"
+    elsif
       puts "Invalid input"
       show_players
-      select_player
     end
   end
+end
 
 
-  def display_players(person)
-    binding.pry
-  end
-
-
-
-  def show_player_bio
-    #TODO
-  end
+  def show_player_bio(person)
+    puts "#{person.country} - #{person.dob} - #{person.weight} - #{person.height} - #{person.prior_nba}"
+    puts "Would you like to select another player?: yes or exit"
+    input = gets.strip
+      if "yes"
+        show_players
+      elsif "exit"
+        "Goodbye"
+      else
+        "Invalid"
+        show_player_bio(person)
+      end
+    end
 
   def menu
 
