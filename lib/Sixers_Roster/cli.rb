@@ -30,12 +30,10 @@ class CLI
     max_value = Player.all.length
     input = gets.strip
     if input.to_i.between?(1,max_value)
-      person = Player.all[input.to_i -1]
+      person = Player.all[input.to_i - 1]
       show_player_bio(person)
-    elsif input == "exit"
-      puts "Goodbye"
-    elsif
-      puts "Invalid input"
+    else
+      "Invalid"
       show_players
     end
   end
@@ -43,16 +41,15 @@ end
 
 
   def show_player_bio(person)
-    puts "#{person.country} - #{person.dob} - #{person.weight} - #{person.height} - #{person.prior_nba}"
+    puts "He is from #{person.country} - He was born on #{person.dob} - He is #{person.weight} - He is #{person.height} - He played at #{person.prior_nba}"
     puts "Would you like to select another player?: yes or exit"
     input = gets.strip
-      if "yes"
-        show_players
-      elsif "exit"
+      if input == "yes"
+        select_player
+      elsif input == "exit"
         "Goodbye"
       else
         "Invalid"
-        show_player_bio(person)
       end
     end
 
@@ -61,3 +58,4 @@ end
   end
 
 end
+
