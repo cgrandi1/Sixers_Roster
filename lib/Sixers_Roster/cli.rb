@@ -42,6 +42,8 @@ class CLI
       @continue = false
     elsif input.to_i.between?(1, Player.all.length)
       @player = Player.all[input.to_i - 1]
+    else
+      puts "Invalid"
     end
   end
 
@@ -54,32 +56,8 @@ class CLI
       elsif input == "exit"
         @continue = false
       else
-        puts "Invalid. Please type 'yes' or 'exit'!"
+        puts "Invalid"
+        show_player
       end
     end
-  
-
-  def menu
-    puts "Type 'exit' anytime you want quit."
   end
-
-end
-
-    # while input != "exit"
-    # max_value = Player.all.length
-    # input = gets.strip
-    # if input.to_i.between?(1,max_value)
-    #   person = Player.all[input.to_i - 1]
-    #     puts "#{person.name}: He is from #{person.country} - He was born on #{person.dob} - He is #{person.weight} - He is #{person.height} - He played at #{person.prior_nba}"
-    #     puts "Would you like to select another player?: yes or exit"
-    #     input = gets.strip
-    #     if input == "yes"
-    #        show_players
-    #     elsif input == "exit"
-    #         puts "Goodbye!"
-    #         break
-    #     else
-    #         puts "Invalid. Please type 'yes' or 'exit'!"
-    #       end
-    #     end
-    # end
