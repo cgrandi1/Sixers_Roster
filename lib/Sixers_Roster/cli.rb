@@ -47,7 +47,17 @@ class CLI
 
   def show_player
     puts "#{@player.name}: He is from #{@player.country} - He was born on #{@player.dob} - He is #{@player.weight} - He is #{@player.height} - He played at #{@player.prior_nba}"
-  end
+    puts "Would you like to select another player?: yes or exit"
+    input = gets.strip
+      if input == "yes"
+        show_players
+      elsif input == "exit"
+        @continue = false
+      else
+        puts "Invalid. Please type 'yes' or 'exit'!"
+      end
+    end
+  
 
   def menu
     puts "Type 'exit' anytime you want quit."
