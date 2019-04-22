@@ -13,7 +13,7 @@ class CLI
     while @continue
     show_players
     select_player
-    show_player if @continue && @player != nil
+    show_player_bio if @continue && @player != nil
     end
     goodbye
   end
@@ -47,7 +47,7 @@ class CLI
     end
   end
 
-  def show_player
+  def show_player_bio
     puts "#{@player.name}, number #{player.number}: He is from #{@player.country} - He was born on #{@player.dob} - He is #{@player.weight} - He is #{@player.height} - He played at #{@player.prior_nba}"
     puts "Would you like to select another player?: yes or exit"
     input = gets.strip
