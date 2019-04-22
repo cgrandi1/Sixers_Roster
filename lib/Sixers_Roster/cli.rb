@@ -48,7 +48,7 @@ class CLI
   end
 
   def show_player
-    puts "#{@player.name}: He is from #{@player.country} - He was born on #{@player.dob} - He is #{@player.weight} - He is #{@player.height} - He played at #{@player.prior_nba}"
+    puts "#{@player.name}, number #{player.number}: He is from #{@player.country} - He was born on #{@player.dob} - He is #{@player.weight} - He is #{@player.height} - He played at #{@player.prior_nba}"
     puts "Would you like to select another player?: yes or exit"
     input = gets.strip
       if input == "yes"
@@ -57,7 +57,6 @@ class CLI
         @continue = false
       else
         puts "Invalid"
-        show_player
       end
     end
   end
